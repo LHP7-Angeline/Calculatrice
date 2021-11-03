@@ -11,12 +11,12 @@
 
 <body>
     <div class="screen">
-            <input id="screenNb1" type="text" disabled>
-            <input id="screenSign" type="text" disabled>
-            <input id="screenNb2" type="text" disabled>
-            <input id="screenResult" type="text" disabled>
+        <input id="screenNb1" type="text" disabled>
+        <input id="screenSign" type="text" disabled>
+        <input id="screenNb2" type="text" disabled>
+        <input id="screenResult" type="text" disabled>
     </div>
-       
+
     <div class="calc-grid">
         <button id="seven">7</button>
         <button id="eight">8</button>
@@ -30,173 +30,186 @@
         <button id="two">2</button>
         <button id="three">3</button>
         <button id="multip" class="sign">X</button>
-        <button class="sign">.</button>
+        <button id="dot" class="sign">.</button>
         <button id="zero">0</button>
         <button id="clear" class="sign">C</button>
         <button id="divide" class="sign">/</button>
         <button id="equal" class="signEqual">=</button>
     </div>
 
-<script>
-    document.getElementById('clear').onclick = () =>{
-        document.getElementById('screenNb1').value = ''
-        document.getElementById('screenSign').value = ''
-        document.getElementById('screenNb2').value = ''
-        document.getElementById('screenResult').value = ''
-    }
-
-    function writeNb(num){
-        if (document.getElementById('screenSign').value == 0){
-            document.getElementById('screenNb1').value += num
-        }else{
-            document.getElementById('screenNb2').value += num
+    <script>
+        document.getElementById('clear').onclick = () => {
+            document.getElementById('screenNb1').value = ''
+            document.getElementById('screenSign').value = ''
+            document.getElementById('screenNb2').value = ''
+            document.getElementById('screenResult').value = ''
         }
-    }
 
-    document.getElementById('seven').onclick = () => writeNb(7)
-    document.getElementById('eight').onclick = () => writeNb(8)
-    document.getElementById('nine').onclick = () => writeNb(9)
-    document.getElementById('four').onclick = () => writeNb(4)
-    document.getElementById('five').onclick = () => writeNb(5)
-    document.getElementById('six').onclick = () => writeNb(6)
-    document.getElementById('one').onclick = () => writeNb(1)
-    document.getElementById('two').onclick = () => writeNb(2)
-    document.getElementById('three').onclick = () => writeNb(3)
-    document.getElementById('zero').onclick = () => writeNb(0)
-
-    function calc(sign){
-        if (document.getElementById('screenSign').value == 0){
-            document.getElementById('screenSign').value = sign
+        function writeNb(num) {
+            if (document.getElementById('screenSign').value == 0) {
+                document.getElementById('screenNb1').value += num
+            } else {
+                document.getElementById('screenNb2').value += num
+            }
         }
-    }
 
-    document.getElementById('add').onclick = () => calc('+')
-    document.getElementById('minus').onclick = () => calc('-')
-    document.getElementById('multip').onclick = () => calc('*')
-    document.getElementById('divide').onclick = () => calc('/')
+        document.getElementById('seven').onclick = () => writeNb(7)
+        document.getElementById('eight').onclick = () => writeNb(8)
+        document.getElementById('nine').onclick = () => writeNb(9)
+        document.getElementById('four').onclick = () => writeNb(4)
+        document.getElementById('five').onclick = () => writeNb(5)
+        document.getElementById('six').onclick = () => writeNb(6)
+        document.getElementById('one').onclick = () => writeNb(1)
+        document.getElementById('two').onclick = () => writeNb(2)
+        document.getElementById('three').onclick = () => writeNb(3)
+        document.getElementById('zero').onclick = () => writeNb(0)
 
-    // document.getElementById('seven').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 7
-    //     }else{
-    //         document.getElementById('screenNb2').value += 7
-    //     }
-    // }
-
-    // document.getElementById('eight').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 8
-    //     }else{
-    //         document.getElementById('screenNb2').value += 8
-    //     }
-    // }
-
-    // document.getElementById('nine').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 9
-    //     }else{
-    //         document.getElementById('screenNb2').value += 9
-    //     }
-    // }
-
-    // document.getElementById('four').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 4
-    //     }else{
-    //         document.getElementById('screenNb2').value += 4
-    //     }
-    // }
-
-    // document.getElementById('five').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 5
-    //     }else{
-    //         document.getElementById('screenNb2').value += 5
-    //     }
-    // }
-
-    // document.getElementById('six').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 6
-    //     }else{
-    //         document.getElementById('screenNb2').value += 6
-    //     }
-    // }
-
-    // document.getElementById('one').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 1
-    //     }else{
-    //         document.getElementById('screenNb2').value += 1
-    //     }
-    // }
-
-    // document.getElementById('two').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 2
-    //     }else{
-    //         document.getElementById('screenNb2').value += 2
-    //     }
-    // }
-
-    // document.getElementById('three').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 3
-    //     }else{
-    //         document.getElementById('screenNb2').value += 3
-    //     }
-    // }
-
-    // document.getElementById('zero').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenNb1').value += 0
-    //     }else{
-    //         document.getElementById('screenNb2').value += 0
-    //     }
-    // }
-
-    // document.getElementById('add').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenSign').value = '+'
-    //     }
-    // }
-
-    // document.getElementById('minus').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenSign').value = '-'
-    //     }
-    // }
-
-    // document.getElementById('multip').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenSign').value = '*'
-    //     }
-    // }
-
-    // document.getElementById('divide').onclick = () =>{
-    //     if (document.getElementById('screenSign').value == 0){
-    //         document.getElementById('screenSign').value = '/'
-    //     }
-    // }
-        
-    document.getElementById('equal').onclick = () =>{
-        if (document.getElementById('screenSign').value == '+'){
-            document.getElementById('screenResult').value = Number(document.getElementById('screenNb1').value) + Number(document.getElementById('screenNb2').value)
-        }else if(document.getElementById('screenSign').value == '-'){
-            document.getElementById('screenResult').value = Number(document.getElementById('screenNb1').value) - Number(document.getElementById('screenNb2').value)
-        }else if(document.getElementById('screenSign').value == '*'){
-            document.getElementById('screenResult').value = Number(document.getElementById('screenNb1').value) * Number(document.getElementById('screenNb2').value)
-        }else{
-            document.getElementById('screenResult').value = Number(document.getElementById('screenNb1').value) / Number(document.getElementById('screenNb2').value)
+        function calc(sign) {
+            if (document.getElementById('screenNb1').value != '') {
+                document.getElementById('screenSign').value = sign
+            }
         }
-    }
 
-    
-    
+        document.getElementById('add').onclick = () => calc('+')
+        document.getElementById('minus').onclick = () => calc('-')
+        document.getElementById('multip').onclick = () => calc('*')
+        document.getElementById('divide').onclick = () => calc('/')
+
+        document.getElementById('dot').onclick = () => {
+                if (document.getElementById('screenSign').value == '') {
+                    if (!document.getElementById('screenNb1').value.includes('.')) {
+                        document.getElementById('screenNb1').value += '.'
+                    }
+                } else {
+                    if (!document.getElementById('screenNb2').value.includes('.')) {
+                        document.getElementById('screenNb2').value += '.'
+                    }
+                }}
 
 
 
-</script>
+
+
+                // document.getElementById('seven').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 7
+                //     }else{
+                //         document.getElementById('screenNb2').value += 7
+                //     }
+                // }
+
+                // document.getElementById('eight').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 8
+                //     }else{
+                //         document.getElementById('screenNb2').value += 8
+                //     }
+                // }
+
+                // document.getElementById('nine').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 9
+                //     }else{
+                //         document.getElementById('screenNb2').value += 9
+                //     }
+                // }
+
+                // document.getElementById('four').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 4
+                //     }else{
+                //         document.getElementById('screenNb2').value += 4
+                //     }
+                // }
+
+                // document.getElementById('five').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 5
+                //     }else{
+                //         document.getElementById('screenNb2').value += 5
+                //     }
+                // }
+
+                // document.getElementById('six').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 6
+                //     }else{
+                //         document.getElementById('screenNb2').value += 6
+                //     }
+                // }
+
+                // document.getElementById('one').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 1
+                //     }else{
+                //         document.getElementById('screenNb2').value += 1
+                //     }
+                // }
+
+                // document.getElementById('two').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 2
+                //     }else{
+                //         document.getElementById('screenNb2').value += 2
+                //     }
+                // }
+
+                // document.getElementById('three').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 3
+                //     }else{
+                //         document.getElementById('screenNb2').value += 3
+                //     }
+                // }
+
+                // document.getElementById('zero').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenNb1').value += 0
+                //     }else{
+                //         document.getElementById('screenNb2').value += 0
+                //     }
+                // }
+
+                // document.getElementById('add').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenSign').value = '+'
+                //     }
+                // }
+
+                // document.getElementById('minus').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenSign').value = '-'
+                //     }
+                // }
+
+                // document.getElementById('multip').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenSign').value = '*'
+                //     }
+                // }
+
+                // document.getElementById('divide').onclick = () =>{
+                //     if (document.getElementById('screenSign').value == 0){
+                //         document.getElementById('screenSign').value = '/'
+                //     }
+                // }
+
+                document.getElementById('equal').onclick = () => {
+                    if (document.getElementById('screenSign').value == '+') {
+                        document.getElementById('screenResult').value = Number(document.getElementById('screenNb1')
+                            .value) + Number(document.getElementById('screenNb2').value)
+                    } else if (document.getElementById('screenSign').value == '-') {
+                        document.getElementById('screenResult').value = Number(document.getElementById('screenNb1')
+                            .value) - Number(document.getElementById('screenNb2').value)
+                    } else if (document.getElementById('screenSign').value == '*') {
+                        document.getElementById('screenResult').value = Number(document.getElementById('screenNb1')
+                            .value) * Number(document.getElementById('screenNb2').value)
+                    } else {
+                        document.getElementById('screenResult').value = Number(document.getElementById('screenNb1')
+                            .value) / Number(document.getElementById('screenNb2').value)
+                    }
+                }
+    </script>
 
 </body>
 
