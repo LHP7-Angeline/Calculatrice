@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="screen">
+            <input id="screenNb1" type="text" size="2">
+            <input id="screenSign" type="text">
+            <input id="screenNb2" type="text">
+            <input id="screenResult" type="text">
+    </div>
+       
+    <div class="calc-grid">
+        <button id="seven">7</button>
+        <button id="eight">8</button>
+        <button id="nine">9</button>
+        <button class="sign">+</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="sign">-</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="sign">X</button>
+        <button class="sign">.</button>
+        <button>0</button>
+        <button id="clear" class="sign">C</button>
+        <button class="sign">/</button>
+        <button class="signEqual">=</button>
+    </div>
+
+<script>
+    document.getElementById('clear').onclick = () =>{
+        document.getElementById('screenNb1').value = ''
+        document.getElementById('screenSign').value = ''
+        document.getElementById('screenNb2').value = ''
+        document.getElementById('screenResult').value = ''
+    }
+
+    document.getElementById('seven').onclick = () =>{
+        if (document.getElementById('screenNb1').value == 0){
+            document.getElementById('screenNb1').value = 7
+        }else{
+            document.getElementById('screenNb2').value = 7
+        }
+    }       
+
+
+
+</script>
+
+</body>
+
+</html>
