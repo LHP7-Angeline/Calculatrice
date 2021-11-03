@@ -67,6 +67,11 @@
         function calc(sign) {
             if (document.getElementById('screenNb1').value != '') {
                 document.getElementById('screenSign').value = sign
+                if(document.getElementById('screenResult').value != ''){
+                    document.getElementById('screenNb1').value = document.getElementById('screenResult').value
+                    document.getElementById('screenNb2').value = ''
+                    document.getElementById('screenResult').value = ''
+                }
             }
         }
 
@@ -85,9 +90,6 @@
                         document.getElementById('screenNb2').value += '.'
                     }
                 }}
-
-
-
 
 
                 // document.getElementById('seven').onclick = () =>{
