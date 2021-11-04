@@ -43,6 +43,7 @@ button{
 
 input{
     height: 5vh;
+    width: 100%;
     border-radius: 0.5rem;
     background-color: transparent;
     border: none;
