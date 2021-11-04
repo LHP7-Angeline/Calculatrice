@@ -38,18 +38,28 @@
     </div>
 
     <script>
-        document.getElementById('clear').onclick = () => {
-            document.getElementById('screenNb1').value = ''
-            document.getElementById('screenSign').value = ''
-            document.getElementById('screenNb2').value = ''
-            document.getElementById('screenResult').value = ''
+        let nb1 = document.getElementById('screenNb1')
+        let nb2 = document.getElementById('screenNb2')
+        let signOpe = document.getElementById('screenSign')
+        let sResult = document.getElementById('screenResult')
+        
+        function reset(){
+            nb1.value = ''
+            signOpe.value = ''
+            nb2.value = ''
+            sResult.value = ''
         }
 
+        document.getElementById('clear').onclick = () => reset()
+
         function writeNb(num) {
-            if (document.getElementById('screenSign').value == 0) {
-                document.getElementById('screenNb1').value += num
+            if(sResult.value != 0){
+                reset()
+            }
+            if (signOpe.value == 0) {
+                nb1.value += num
             } else {
-                document.getElementById('screenNb2').value += num
+                nb2.value += num
             }
         }
 
@@ -65,12 +75,12 @@
         document.getElementById('zero').onclick = () => writeNb(0)
 
         function calc(sign) {
-            if (document.getElementById('screenNb1').value != '') {
-                document.getElementById('screenSign').value = sign
-                if(document.getElementById('screenResult').value != ''){
-                    document.getElementById('screenNb1').value = document.getElementById('screenResult').value
-                    document.getElementById('screenNb2').value = ''
-                    document.getElementById('screenResult').value = ''
+            if (nb1.value != '') {
+                signOpe.value = sign
+                if(sResult.value != ''){
+                    nb1.value = sResult.value
+                    nb2.value = ''
+                    sResult.value = ''
                 }
             }
         }
@@ -81,13 +91,13 @@
         document.getElementById('divide').onclick = () => calc('/')
 
         document.getElementById('dot').onclick = () => {
-                if (document.getElementById('screenSign').value == '') {
-                    if (!document.getElementById('screenNb1').value.includes('.')) {
-                        document.getElementById('screenNb1').value += '.'
+                if (signOpe.value == '') {
+                    if (!nb1.value.includes('.')) {
+                        nb1.value += '.'
                     }
                 } else {
-                    if (!document.getElementById('screenNb2').value.includes('.')) {
-                        document.getElementById('screenNb2').value += '.'
+                    if (!nb2.value.includes('.')) {
+                        nb2.value += '.'
                     }
                 }}
 
@@ -197,18 +207,14 @@
                 // }
 
                 document.getElementById('equal').onclick = () => {
-                    if (document.getElementById('screenSign').value == '+') {
-                        document.getElementById('screenResult').value = Number(document.getElementById('screenNb1')
-                            .value) + Number(document.getElementById('screenNb2').value)
-                    } else if (document.getElementById('screenSign').value == '-') {
-                        document.getElementById('screenResult').value = Number(document.getElementById('screenNb1')
-                            .value) - Number(document.getElementById('screenNb2').value)
-                    } else if (document.getElementById('screenSign').value == '*') {
-                        document.getElementById('screenResult').value = Number(document.getElementById('screenNb1')
-                            .value) * Number(document.getElementById('screenNb2').value)
+                    if (signOpe.value == '+') {
+                        sResult.value = Number(nb1.value) + Number(nb2.value)
+                    } else if (signOpe.value == '-') {
+                        sResult.value = Number(nb1.value) - Number(nb2.value)
+                    } else if (signOpe.value == '*') {
+                        sResult.value = Number(nb1.value) * Number(nb2.value)
                     } else {
-                        document.getElementById('screenResult').value = Number(document.getElementById('screenNb1')
-                            .value) / Number(document.getElementById('screenNb2').value)
+                        sResult.value = Number(nb1.value) / Number(nb2.value)
                     }
                 }
     </script>
