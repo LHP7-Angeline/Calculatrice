@@ -53,3 +53,16 @@ input{
     text-align: end;
     padding: 0.2rem;
 }
+
+@media (prefers-color-scheme: dark){
+    .sign{
+        background-color: #f5cb5c;
+    }
+    button{
+        background-color: #e8eddf;
+        color: #2d3142;
+    }
+    #clear{
+        background-color: #e76f51;
+    }    
+}
